@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-react"],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    /* JSX */
+    // "react/prop-types": [1, {
+    //   "ignore": ["className", "children", "location", "params", "location*"]
+    // }],
+    "no-unused-vars": 1
+  }
+}
