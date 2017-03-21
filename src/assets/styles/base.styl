@@ -5,9 +5,9 @@ gray = #f2f6f9
 grey = #adb5c0
 green = #80bd01
 
-html,body,p
+html,body,p,blockquote,ul
   margin: 0px
-  paddin: 0px
+  padding: 0px
 
 html,body
   width: 100%
@@ -17,26 +17,128 @@ html,body
 body
   font: 14px font-family
   color: black
+  background-color: #fff
 
-.root
+ol,ul
+  list-style:none
+  
+img
+  max-width: 100%
+
+.put
   width: 100%
+  height: 42px
+
+.footer
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 40px
+    z-index: 1000
+    border-top: 1px solid grey
+    background-color: gray
+    display: flex
+    a
+      flex: 1
+      text-align: center
+      line-height: 40px
+      border-right: 1px solid #ccc
+      &:last-child
+        border: none
+
 a
   text-decoration: none
   color: #333
   &:hover
     text-decoration: underline
-  &:active
-    color: gray
 
-img 
-  max-width: 100%
-  height: auto
-  vertical-align: middle
+.article-content 
+  padding: 10px
+  border-top: 1px solid #eee
+  ul
+    margin-top: 10px
+    li
+      line-height: 2em
+  p
+    line-height: 24px
+    a
+      color: #08c
+  img 
+    max-width: 100%
+    height: auto
+    vertical-align: middle
+
+blockquote
+  font-weight: bold
+  margin-top: 20px
+  padding: 10px
+  background-color: #eee
+.reply-count
+  background-color: gray
+  line-height: 40px
+  text-align: left
+  padding-left: 10px
+.replies
+  border-top: 1px solid #eee
+  padding-top: 20px
+.ups
+  background-color: grey
+
+.reply
+  padding: 10px
+  border-bottom: 1px solid #eee
+  p
+    line-height: 1.8em
+  a
+    margin-right: 20px
+  .avatar
+    border-radius: 50%
+    border: 1px solid #eee
+    width: 30px
+    vertical-align: middle
+    margin-right: 10px
+
+.markdown-text
+  margin: 10px 0
+  a
+    color: #08c
+
+.wrap, .topicInfo
+  background-color: gray
+.wrap-header
+  height: 30px
+  line-height: 30px
+  margin: 0 10px 10px
+  text-align: center
+  display: flex
+  li
+    flex: 1
+    color: white
+  a
+    color: white
+    display: block
+    text-decoration: none
+    &:active
+      background: yellow
+.normal
+  background-color: green
+.active
+  background-color: #80BD79
 
 .item
+  background-color: #fff
+  position: relative
+  border-radius: 4px
+  border: 1px solid gray
+  border-left: none
+  border-right: none
+  padding: 20px 10px 10px
+  margin: 0 10px 10px 10px
   img
+    border-radius: 50%
+    border: 1px solid gray
     width: 30px
-    border-radius: 3px
     vertical-align: middle
 
 .label-good, .label-share, .label-job, .label-ask, .label-top
@@ -46,12 +148,34 @@ img
   color: white
   line-height: 20px
   background-color: green
+.po
+  position: absolute
+  top: 0
+  right: 10px
 .label-ask
   background-color: grey
 
+.db
+  display: block
+.di
+  display: inline
 .fr
   float: right
 .pd10
   padding: 10px
+.pd20
+  padding: 20px
+.pl20
+  padding-left: 20px
+.pr20
+  padding-right: 20px
 .mt20
   margin-top: 20px
+.mr10
+  margin-right: 10px
+.ml10
+  margin-left: 10px
+.mt10
+  margin-top: 10px
+.mb10
+  margin-bottom: 10px
