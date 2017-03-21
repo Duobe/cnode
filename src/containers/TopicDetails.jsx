@@ -11,7 +11,8 @@ class TopicDetails extends Component {
   }
 
   componentDidMount () {
-    getTopicDetails(this.props.params.tid).then((details) => {
+    const tid = this.props.params.tid
+    getTopicDetails(tid).then((details) => {
       this.setState({details})
     })
   }
