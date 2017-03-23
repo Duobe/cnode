@@ -10,12 +10,12 @@ import TopicDetails from './containers/TopicDetails'
 import User from './containers/User'
 
 const routes = (
-  <Route path='/' component={App}>
+  <Route path='/cnode' component={App}>
     <IndexRoute component={Topics} />
-    <Route path='createTopic' component={CreateTopic} />
-    <Route path='topic/:tid' component={TopicDetails} />
-    <Route path='user/:uname' component={User} />
-    <Redirect from='*' to='/dist' />
+    <Route path='/cnode/createTopic' component={CreateTopic} />
+    <Route path='/cnode/topic/:tid' component={TopicDetails} />
+    <Route path='/cnode/user/:uname' component={User} />
+    <Redirect from='*' to='/cnode' />
   </Route>
 )
 

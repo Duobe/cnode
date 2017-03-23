@@ -39,11 +39,11 @@ module.exports = {
     // port: 8080
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false
-    //   }
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     // new ExtractTextPlugin({ filename: '[name].css', disable: false, allChunks: true }),
     new webpack.optimize.CommonsChunkPlugin('common'),
     new webpack.HotModuleReplacementPlugin(),
