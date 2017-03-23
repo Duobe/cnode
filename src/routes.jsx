@@ -12,9 +12,9 @@ import User from './containers/User'
 const routes = (
   <Route path='/' component={App}>
     <IndexRoute component={Topics} />
-    <Route path='/createTopic' component={CreateTopic} />
-    <Route path='/topic/:tid' component={TopicDetails} />
-    <Route path='/user/:uname' component={User} />
+    <Route path='createTopic' component={CreateTopic} />
+    <Route path='topic/:tid' component={TopicDetails} />
+    <Route path='user/:uname' component={User} />
     <Redirect from='*' to='/' />
   </Route>
 )

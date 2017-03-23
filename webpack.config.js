@@ -32,10 +32,10 @@ module.exports = {
   },
   devtool: '#source-map',
   devServer: {
-    historyApiFallback: true,
-    hot: true,
-    contentBase: path.resolve(root, 'dist'),
-    publicPath: '/cnode'
+    historyApiFallback: true
+    // hot: true,
+    // contentBase: path.resolve(root, 'dist'),
+    // publicPath: '/'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
