@@ -2,6 +2,7 @@ const path = require('path')
 const root = path.resolve(__dirname, './')
 const webpack = require('webpack')
 const HtmlwebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -11,9 +12,8 @@ module.exports = {
     path.join(root, 'src/index.js')
   ],
   output: {
-    filename: 'bundle.js',
-    path: path.join(root, 'dist'),
-    publicPath: '/'
+    filename: '[name].js',
+    path: path.join(root, 'dist')
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -30,16 +30,23 @@ module.exports = {
       { test: /\.(png|jpg|eot|woff|ttf|svg)$/, loader: 'url-loader?limit=8192' }
     ]
   },
-  devtool: 'source-map',
+  devtool: '#source-map',
   devServer: {
-    historyApiFallback: true,
-    hot: true,
-    contentBase: path.resolve(root, 'dist'),
-    publicPath: '/',
-    port: 8080
+    historyApiFallback: true
+    // hot: true,
+    // contentBase: path.resolve(root, 'dist'),
+    // publicPath: '/',
+    // port: 8080
   },
   plugins: [
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   }
+    // }),
+    // new ExtractTextPlugin({ filename: '[name].css', disable: false, allChunks: true }),
+    new webpack.optimize.CommonsChunkPlugin('common'),
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlwebpackPlugin({ template: path.join(root, 'index.html') })
+    new HtmlwebpackPlugin({ template: path.join(root, './src/index.html') })
   ]
 }

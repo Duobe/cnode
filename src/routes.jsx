@@ -9,22 +9,13 @@ import CreateTopic from './containers/CreateTopic'
 import TopicDetails from './containers/TopicDetails'
 import User from './containers/User'
 
-// import {fetchData} from './actions/actions'
-// function loadData () {
-//   store.dispatch(fetchData('https://cnodejs.org/api/v1'))
-// }
-
-store.subscribe(() => {
-  // console.log(store.getState())
-})
-
 const routes = (
   <Route path='/' component={App}>
     <IndexRoute component={Topics} />
-    <Route path='/createTopic' component={CreateTopic} />
-    <Route path='/topic/:tid' component={TopicDetails} />
-    <Route path='/user/:uname' component={User} />
-    <Redirect from='*' to='/' />
+    <Route path='createTopic' component={CreateTopic} />
+    <Route path='topic/:tid' component={TopicDetails} />
+    <Route path='user/:uname' component={User} />
+    <Redirect from='*' to='/dist' />
   </Route>
 )
 
