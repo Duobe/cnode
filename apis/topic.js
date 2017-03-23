@@ -16,11 +16,12 @@ export const getTopicDetails = (tid) => {
 }
 
 export const postTopic = (accesstoken, title, tab, content) => {
+  console.log(accesstoken + ' ' + title + ' ' + tab + ' ' + content)
   return http.post(`/topics`, {
-    accesstoken,
-    title,
-    tab,
-    content
+    accesstoken: accesstoken,
+    title: title,
+    tab: tab,
+    content: content
   }).then((res) => {
     return res.data.data
   })

@@ -5,6 +5,7 @@ import { Router, Route, Redirect, IndexRoute } from 'react-router'
 import store from './store'
 import App from './containers/App'
 import Topics from './containers/Topics'
+import CreateTopic from './containers/CreateTopic'
 import TopicDetails from './containers/TopicDetails'
 import User from './containers/User'
 
@@ -20,6 +21,7 @@ store.subscribe(() => {
 const routes = (
   <Route path='/' component={App}>
     <IndexRoute component={Topics} />
+    <Route path='/createTopic' component={CreateTopic} />
     <Route path='/topic/:tid' component={TopicDetails} />
     <Route path='/user/:uname' component={User} />
     <Redirect from='*' to='/' />
